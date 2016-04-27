@@ -1,0 +1,111 @@
+\documentclass[letterpaper]{article}
+\usepackage[titletoc,toc,title]{appendix}
+
+\usepackage{fancyheadings,multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-2in}
+\setlength{\topmargin}{-.5in}
+\setlength{\headsep}{.5in}
+\addtolength{\headsep}{-\headheight}
+\setlength{\footskip}{.5in}
+\setlength{\textwidth}{\paperwidth}
+\addtolength{\textwidth}{-2in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\flushbottom
+
+\title{Semantic Role Labeling with Assistance of Neural Network Dependency Parser}
+\author{Shawn Peng}
+
+
+\begin{document}
+	
+	\maketitle
+	\pagenumbering{gobble}
+%	\newpage
+	\pagenumbering{arabic}
+	
+	\flushleft
+		
+	\section{Introduction}
+	``Semantic role labeling, sometimes also called shallow semantic parsing, is a task in natural language processing consisting of the detection of the semantic arguments associated with the predicate or verb of a sentence and their classification into their specific roles." [wiki]
+	These days, there emerged new approaches on dependency parser, we want to see how it will help the semantic role labeling task.
+	find relations and find roles for words.
+	
+	
+	
+	\section{Related Works}
+	I mainly will use one previous achievement, A Fast and Accurate Dependency Parser using Neural Networks \cite{manning-EtAl:2014:P14-5}.
+
+	\bigskip
+	Reading list.
+	
+		\bigskip
+	Automatic Labeling of Semantic Roles[?].
+
+	\bigskip
+	Charles J. Fillmore, and Collin Baker developed the theory of frame semantics that the FrameNet is based on. []
+	
+		\bigskip
+	Semantic Role Labeling for Open Information Extraction by Janara Christensen, Mausam, Stephen Soderland and Oren Etzioni []
+	
+		\bigskip
+	The Importance of Syntactic Parsing and	Inference in Semantic Role Labeling \cite{Punyakanok}
+	
+		\bigskip
+	Semantic Role Labeling with Neural Network Factors \cite{FitzGerald2015SemanticRL}
+	
+		\bigskip
+	Sentence Simplification for Semantic Role Labeling \cite{Woodsend:2014:TRI:2750423.2750426}
+	
+		\bigskip
+	Frame-semantic parsing \cite{Das:2014}
+	
+	\bigskip
+	Tools,\\
+		A Python wrapper for Stanford CoreNLP by Smitha Milli that uses the new CoreNLP v3.6.0 server. []
+	
+	\section{Background}
+	``The goal of the semantic role labeling task is to discover the predicate–argument structure
+	of each predicate in a given input sentence." In this work, we only focus on the verb predicate.
+	
+	\section{Method}
+	We will try to implement a semantic role labeling program, mainly something based on the dependency parser proposed in Manning's paper \cite{manning-EtAl:2014:P14-5}. We maybe will implement some method in previous papers. Another option is for implement a new neural network for this task.
+	
+	\section{Experiment}
+	For dependency parser, they report they have this accuracy,\\
+	Development: 	(1700 sentences)	UAS	92.0	LAS	89.7\\
+	Test:			(2416 sentences)	UAS	91.7	LAS	89.5
+	
+	We don't have their original data, but maybe we could try to test on the data used by the paper CoNLL-2005 Shared Task.
+	
+	
+	
+	
+	\section{Conclusion}
+	
+
+	
+\bibliographystyle{unsrt}
+\bibliography{proj}
+
+\begin{appendices}
+
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+
+  \section{Whole Process}
+Start Stanford Dependency Parser server with the following command, \\
+\lstinline [language==bash]{java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer}.
+
+
+\end{appendices}
+
+	
+\end{document}
