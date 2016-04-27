@@ -1,4 +1,4 @@
-# semantic_role_labeling
+# semantic role labeling
 Computational Linguistics Project: Semantic Role Labeling
 
 
