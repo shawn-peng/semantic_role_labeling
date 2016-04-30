@@ -28,5 +28,6 @@ if __name__ == "__main__":
     for block in blocks:
     	sentence = conll12_block2sentence(block)
 
-    	srl = srl_parse(sentence)
+    	srls = srl_parse(sentence)
+    	print srls[0]
     	quit()
