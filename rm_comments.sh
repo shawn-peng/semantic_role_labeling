@@ -1,6 +1,6 @@
 #!/bin/bash
 
-testdir="../data/test/"
+testdir="data/test/"
 
 for file in `ls $testdir/*conll`;
 do
