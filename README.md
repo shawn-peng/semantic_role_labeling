@@ -2,8 +2,11 @@
 Computational Linguistics Project: Semantic Role Labeling
 
 ### Data:
-CoNLL09 trial dataset
+CoNLL-12 dataset
 
 ### Evaluate:
-Using CoNLL-X format and eval.pl from http://ilk.uvt.nl/conll/software.html#eval
+put CoNLL-12 data file with name in form *_conll into data/test folder
+execute ./rm_comments.sh
+execute ./space2tab.sh
+execute ./runtest.py
 
